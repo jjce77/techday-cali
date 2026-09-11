@@ -173,9 +173,7 @@ El evento es **propósito social**: vamos a cobrar una tarifa mínima ($20k COP)
 ¿Cuál te funciona?
 
 Un abrazo,  
-[Tu nombre]  
-[Tu teléfono]  
-[Tu email]
+John Cardona  
 
 ---
 
@@ -213,8 +211,6 @@ Créeme que esto es más que un favor: es una oportunidad para que USB sea visib
 - Viernes 3-4pm
 
 Quedo pendiente,  
-[Tu nombre]  
-[Tu teléfono]  
-[Tu email]
+John Cardona  
 
 ---
