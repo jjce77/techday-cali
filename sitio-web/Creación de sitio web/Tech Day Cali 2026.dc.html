@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="./image-slot.js"></script>
+<style>html{scroll-behavior:smooth}section[id]{scroll-margin-top:88px}a{color:var(--turquoise-700);text-decoration:none}a:hover{color:var(--turquoise-600);text-decoration:underline}</style>
+</helmet>
+<div style="font-family:var(--font-body);background:var(--surface-page);color:var(--text-body);min-height:100vh">
+
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Header" items="{{ navegacion }}" active="{{ rutaActiva }}" onNavigate="{{ navegar }}" cta="Inscríbete" hint-size="100%,70px"></x-import>
+
+<sc-if value="{{ esInicio }}" hint-placeholder-val="{{ true }}">
+<div>
+
+<section style="background:var(--wash-aurora)">
+<div style="max-width:var(--container-max);margin:0 auto;padding:clamp(48px,7vw,96px) var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-12);align-items:center">
+<div>
+<div style="display:flex;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-6)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Badge" tone="turquoise" solid="{{ true }}" hint-size="140px,28px">21 · Nov · 2026</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Badge" tone="navy" hint-size="140px,28px">Cali, Colombia</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Badge" tone="yellow" hint-size="140px,28px">8:00 a 18:00</x-import>
+</div>
+<p style="font-family:var(--font-mono);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--turquoise-700);font-weight:var(--fw-semibold);margin:0 0 var(--space-4)">¡Bienvenidos!</p>
+<h1 style="font-family:var(--font-display);font-size:var(--fs-display-xl);line-height:var(--lh-display);letter-spacing:var(--ls-display);text-transform:uppercase;margin:0;color:var(--navy-900)">Tech Day<br>Cali <span style="color:var(--turquoise-600)">2026</span></h1>
+<p style="margin:var(--space-6) 0 0;max-width:48ch;font-size:var(--fs-body-l);color:var(--grey-600);text-wrap:pretty">Conectando ideas, tecnología y talento. Un espacio para compartir conocimiento, descubrir nuevas tecnologías y conectar con la comunidad tecnológica del Valle.</p>
+<div style="display:flex;gap:var(--space-3);flex-wrap:wrap;margin-top:var(--space-8)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="primary" size="lg" onClick="{{ irAsistente }}" hint-size="200px,50px">Quiero asistir</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="secondary" size="lg" onClick="{{ irCharlas }}" hint-size="200px,50px">Ver las charlas</x-import>
+</div>
+<sc-if value="{{ mostrarContador }}" hint-placeholder-val="{{ true }}">
+<div style="margin-top:var(--space-10)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.CountdownTimer" hint-size="100%,96px"></x-import>
+</div>
+</sc-if>
+</div>
+<img src="assets/tanager-flight.png" alt="Tangara multicolor en vuelo, ave emblemática del Valle del Cauca" style="width:100%;display:block;border-radius:var(--radius-xl);box-shadow:var(--shadow-lg)">
+</div>
+<div style="max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter) clamp(48px,6vw,88px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:var(--space-8)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Stat" value="{{ cifraConferencistas }}" label="Conferencistas" hint-size="160px,90px"></x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Stat" value="{{ cifraParticipantes }}" label="Participantes" accent="var(--yellow-600)" hint-size="160px,90px"></x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Stat" value="{{ cifraPatrocinadores }}" label="Patrocinadores" accent="var(--green-600)" hint-size="160px,90px"></x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Stat" value="8" label="Comunidades" accent="var(--lilac-500)" hint-size="160px,90px"></x-import>
+</div>
+</div>
+</section>
+
+<section id="evento" style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" eyebrow="01 — Acerca del evento" title="Un punto de encuentro para la comunidad tecnológica" lead="Tech Day Cali es el primer evento tecnológico de escala en la ciudad, creado por 8 comunidades tech que se unen para compartir conocimiento, aprender y descubrir las tecnologías que están transformando la industria." hint-size="100%,200px"></x-import>
+<p style="max-width:58ch;font-size:var(--fs-body-l);color:var(--grey-500);margin:var(--space-6) 0 var(--space-10);text-wrap:pretty">Es un espacio para conectar con otros profesionales, crear comunidad e impulsar el talento tecnológico de la región, poniendo a Cali en el mapa tech de Colombia.</p>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.CommunityStrip" communities="{{ comunidades }}" title="Nos organizamos juntas" hint-size="100%,120px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--space-5);margin-top:var(--space-12)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" accentBar="{{ true }}" hint-size="230px,170px">
+<h3 style="margin:0 0 var(--space-2);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--navy-900)">Cloud</h3>
+<p style="margin:0;font-size:var(--fs-body-s);color:var(--grey-500)">AWS, GCP y Azure: arquitectura, costos y multi-región.</p>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" accentBar="{{ true }}" hint-size="230px,170px">
+<h3 style="margin:0 0 var(--space-2);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--navy-900)">Kubernetes &amp; DevOps</h3>
+<p style="margin:0;font-size:var(--fs-body-s);color:var(--grey-500)">Plataformas internas, CI/CD, observabilidad y SRE.</p>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" accentBar="{{ true }}" hint-size="230px,170px">
+<h3 style="margin:0 0 var(--space-2);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--navy-900)">Software moderno</h3>
+<p style="margin:0;font-size:var(--fs-body-s);color:var(--grey-500)">Frontend, backend, APIs y calidad en equipos reales.</p>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" accentBar="{{ true }}" hint-size="230px,170px">
+<h3 style="margin:0 0 var(--space-2);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--navy-900)">Innovación e IA</h3>
+<p style="margin:0;font-size:var(--fs-body-s);color:var(--grey-500)">Casos de éxito con IA/ML aplicada en producto.</p>
+</x-import>
+</div>
+</section>
+
+<section id="inscripciones" style="background:var(--surface-night)">
+<div style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" tone="night" eyebrow="02 — Inscripciones" title="¿Cómo quieres participar?" lead="Elige tu forma de estar el 21 de noviembre. Los tres formularios toman menos de dos minutos." hint-size="100%,200px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-5);margin-top:var(--space-10)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" tone="night" hint-size="260px,230px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Badge" tone="turquoise" hint-size="100px,26px">Asistente</x-import>
+<h3 style="margin:var(--space-4) 0 var(--space-3);font-family:var(--font-display);font-size:var(--fs-h2);color:var(--white)">Vengo a aprender</h3>
+<p style="margin:0 0 var(--space-6);font-size:var(--fs-body-s);color:var(--navy-200)">Participa en las charlas, conoce profesionales y conecta con la comunidad.</p>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="primary" onClick="{{ irAsistente }}" hint-size="170px,44px">Inscribirme</x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" tone="night" hint-size="260px,230px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Badge" tone="yellow" hint-size="100px,26px">Ponente</x-import>
+<h3 style="margin:var(--space-4) 0 var(--space-3);font-family:var(--font-display);font-size:var(--fs-h2);color:var(--white)">Tengo algo que contar</h3>
+<p style="margin:0 0 var(--space-6);font-size:var(--fs-body-s);color:var(--navy-200)">Comparte tus conocimientos, experiencias y proyectos con nuestra comunidad.</p>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="accent" onClick="{{ irPonente }}" hint-size="170px,44px">Postularme</x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" tone="night" hint-size="260px,230px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Badge" tone="green" hint-size="100px,26px">Patrocinador</x-import>
+<h3 style="margin:var(--space-4) 0 var(--space-3);font-family:var(--font-display);font-size:var(--fs-h2);color:var(--white)">Quiero apoyar el evento</h3>
+<p style="margin:0 0 var(--space-6);font-size:var(--fs-body-s);color:var(--navy-200)">Conecta tu marca con profesionales, desarrolladores y entusiastas de la tecnología.</p>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="onNight" onClick="{{ irPatrocinador }}" hint-size="170px,44px">Quiero patrocinar</x-import>
+</x-import>
+</div>
+</div>
+</section>
+
+<section id="charlas" style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" eyebrow="03 — Charlas" title="Aprende de quienes están construyendo el futuro" lead="Ponentes que enfrentan los mismos retos que tú comparten sus aciertos, sus errores y las lecciones que solo da la experiencia." hint-size="100%,200px"></x-import>
+<p style="max-width:58ch;font-size:var(--fs-body-l);color:var(--grey-500);margin:var(--space-6) 0 var(--space-10);text-wrap:pretty">Ven a inspirarte, a hacer las preguntas que no sabías que necesitabas hacer, y a llevarte ideas que puedas aplicar desde el lunes.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:var(--space-5)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.TalkCard" time="10:00" track="IA/ML" title="El futuro de la inteligencia artificial aplicada" speaker="Por confirmar" room="Auditorio" level="Intermedio" hint-size="290px,190px"></x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.TalkCard" time="11:00" track="Software" title="Construyendo aplicaciones modernas" speaker="Por confirmar" room="Sala B" level="Básico" hint-size="290px,190px"></x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.TalkCard" time="13:00" track="Cloud" title="Arquitecturas cloud escalables" speaker="Por confirmar" room="Auditorio" level="Avanzado" hint-size="290px,190px"></x-import>
+</div>
+<div style="margin-top:var(--space-8)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="secondary" size="lg" onClick="{{ irCharlas }}" hint-size="220px,50px">Ver toda la agenda</x-import>
+</div>
+</section>
+
+<section id="cali" style="background:var(--wash-sky)">
+<div style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--space-12);align-items:center">
+<div>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" eyebrow="04 — Nuestra ciudad" title="Cali te espera" hint-size="100%,150px"></x-import>
+<p style="max-width:52ch;font-size:var(--fs-body-l);color:var(--grey-600);margin:var(--space-6) 0 var(--space-5);text-wrap:pretty">Más que ser conocida como la Capital de la Salsa y la Sucursal del Cielo, tras el terremoto del 10 de agosto la ciudad mostró su verdadera esencia y se ganó un nuevo título:</p>
+<p style="font-family:var(--font-display);font-size:var(--fs-h1);line-height:var(--lh-heading);letter-spacing:var(--ls-display);text-transform:uppercase;font-weight:var(--fw-bold);color:var(--turquoise-700);margin:0 0 var(--space-8)">¡La capital de la solidaridad!</p>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="primary" size="lg" onClick="{{ irCali }}" hint-size="200px,50px">Descubre Cali</x-import>
+</div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4)">
+<div style="grid-column:span 2;height:220px"><image-slot id="cali-home-1" shape="rounded" radius="28" placeholder="Foto de Cali — Bulevar del Río"></image-slot></div>
+<div style="height:150px"><image-slot id="cali-home-2" shape="rounded" radius="20" placeholder="Foto — San Antonio"></image-slot></div>
+<div style="height:150px"><image-slot id="cali-home-3" shape="rounded" radius="20" placeholder="Foto — salsa caleña"></image-slot></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="patrocinadores" style="background:var(--surface-sunken)">
+<div style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" eyebrow="05 — Patrocinadores" title="Ellos hacen posible Tech Day Cali 2026" lead="Los cupos de patrocinio para esta edición están abiertos." hint-size="100%,190px"></x-import>
+<div style="margin-top:var(--space-10);display:flex;flex-direction:column;gap:var(--space-8)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SponsorTier" tier="diamante" sponsors="{{ patrocinadoresDiamante }}" hint-size="100%,170px"></x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SponsorTier" tier="oro" sponsors="{{ patrocinadoresOro }}" hint-size="100%,140px"></x-import>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-5);margin-top:var(--space-12)">
+<p style="margin:0;max-width:34ch;font-family:var(--font-display);font-size:var(--fs-h3);color:var(--navy-900)">¿Quieres que tu empresa sea parte de Tech Day Cali 2026?</p>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="accent" size="lg" onClick="{{ irPatrocinador }}" hint-size="260px,50px">Conoce las opciones</x-import>
+</div>
+</div>
+</section>
+
+<section id="contacto" style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--space-12);align-items:start">
+<div>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" eyebrow="06 — Contacto" title="¿Tienes alguna pregunta?" lead="Escríbenos y te responde una persona del comité organizador." hint-size="100%,190px"></x-import>
+<p style="margin:var(--space-6) 0 0;font-family:var(--font-mono);font-size:var(--fs-body);color:var(--grey-600)"><a href="mailto:techday@gmail.com">techday@gmail.com</a> · Cali, Colombia</p>
+</div>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" hint-size="100%,470px">
+<form onSubmit="{{ enviarContacto }}">
+<div style="display:flex;flex-direction:column;gap:var(--space-5)">
+<sc-if value="{{ enviadoContacto }}" hint-placeholder-val="{{ false }}">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormMessage" tone="success" title="¡Listo! Recibimos tu mensaje" hint-size="100%,90px">Te escribimos al correo que nos dejaste.</x-import>
+</sc-if>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Nombre" htmlFor="ct-nombre" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="ct-nombre" required="{{ true }}" placeholder="Ana Marín" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Correo" htmlFor="ct-correo" required="{{ true }}" hint="Te escribimos aquí." hint-size="100%,86px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="ct-correo" type="email" required="{{ true }}" placeholder="ana@correo.com" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Asunto" htmlFor="ct-asunto" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="ct-asunto" required="{{ true }}" placeholder="Sobre el patrocinio" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Mensaje" htmlFor="ct-msg" required="{{ true }}" hint-size="100%,150px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Textarea" id="ct-msg" rows="{{ 4 }}" required="{{ true }}" placeholder="Cuéntanos en qué te ayudamos." hint-size="100%,110px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="primary" size="lg" fullWidth="{{ true }}" hint-size="100%,52px">Enviar mensaje</x-import>
+</div>
+</form>
+</x-import>
+</div>
+</section>
+
+</div>
+</sc-if>
+
+<sc-if value="{{ esCharlas }}" hint-placeholder-val="{{ false }}">
+<div>
+<section style="background:var(--wash-aurora)">
+<div style="max-width:var(--container-max);margin:0 auto;padding:clamp(40px,6vw,80px) var(--gutter)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" eyebrow="Agenda — 21 de noviembre de 2026" title="Charlas" lead="Un solo día, 8:00 a 18:00. Cada charla es una oportunidad de aprender de quienes están construyendo el futuro de la tecnología, hoy." hint-size="100%,210px"></x-import>
+</div>
+</section>
+<section style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter)">
+<div style="display:flex;flex-wrap:wrap;gap:var(--space-3);margin-bottom:var(--space-8)">
+<sc-for list="{{ filtros }}" as="f" hint-placeholder-count="5">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="{{ f.variant }}" size="sm" onClick="{{ f.onClick }}" hint-size="110px,38px">{{ f.label }}</x-import>
+</sc-for>
+</div>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" padding="0" hint-size="100%,520px">
+<div>
+<sc-for list="{{ agendaFiltrada }}" as="fila" hint-placeholder-count="8">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.ScheduleRow" time="{{ fila.time }}" title="{{ fila.title }}" detail="{{ fila.detail }}" track="{{ fila.track }}" kind="{{ fila.kind }}" hint-size="100%,64px"></x-import>
+</sc-for>
+</div>
+</x-import>
+<p style="margin:var(--space-6) 0 0;font-size:var(--fs-body-s);color:var(--grey-500)">Ponentes y títulos por confirmar: la convocatoria sigue abierta.</p>
+<div style="margin-top:var(--space-10);display:flex;flex-wrap:wrap;gap:var(--space-3)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="primary" size="lg" onClick="{{ irPonente }}" hint-size="230px,50px">Quiero dar una charla</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="secondary" size="lg" onClick="{{ irAsistente }}" hint-size="200px,50px">Reservar mi cupo</x-import>
+</div>
+</section>
+</div>
+</sc-if>
+
+<sc-if value="{{ esCali }}" hint-placeholder-val="{{ false }}">
+<div>
+<section style="background:var(--wash-aurora)">
+<div style="max-width:var(--container-max);margin:0 auto;padding:clamp(40px,6vw,80px) var(--gutter)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" eyebrow="Destino excepcional" title="Cali te espera con su brisa y calidez" hint-size="100%,160px"></x-import>
+<div style="height:clamp(260px,34vw,420px);margin-top:var(--space-8)"><image-slot id="cali-hero" shape="rounded" radius="28" placeholder="Foto hero de Cali — panorámica de la ciudad"></image-slot></div>
+<p style="max-width:58ch;font-size:var(--fs-body-l);color:var(--grey-600);margin:var(--space-8) 0 0;text-wrap:pretty">Conocida como la Capital Mundial de la Salsa y la Sucursal del Cielo, Santiago de Cali brinda el marco perfecto para un evento tecnológico inspirador: clima tropical generoso, gastronomía diversa, exuberancia andina y una comunidad con vocación hospitalaria única.</p>
+</div>
+</section>
+
+<section style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" eyebrow="01 — Dimensiones del paraíso" title="Cuatro razones para quedarte un día más" hint-size="100%,160px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-6);margin-top:var(--space-10)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" padding="0" hint-size="280px,420px">
+<div style="height:200px"><image-slot id="cali-salsa" shape="rect" placeholder="Foto — academia de salsa caleña"></image-slot></div>
+<div style="padding:var(--space-6)">
+<h3 style="margin:0 0 var(--space-3);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--navy-900)">Capital Mundial de la Salsa</h3>
+<p style="margin:0;font-size:var(--fs-body-s);color:var(--grey-500);text-wrap:pretty">El repique de timbales late en cada esquina. Desde las academias de salsa caleña de talla internacional hasta las callejuelas empedradas de San Antonio con sus fachadas coloniales, artesanos locales, tertulias y cuenteros en la colina al caer la tarde.</p>
+</div>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" padding="0" hint-size="280px,420px">
+<div style="height:200px"><image-slot id="cali-farallones" shape="rect" src="assets/tanager-portrait.png" placeholder="Foto — Farallones o río Pance"></image-slot></div>
+<div style="padding:var(--space-6)">
+<h3 style="margin:0 0 var(--space-3);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--navy-900)">Naturaleza y Farallones</h3>
+<p style="margin:0;font-size:var(--fs-body-s);color:var(--grey-500);text-wrap:pretty">Cali es la capital de las aves de Colombia. A minutos del núcleo urbano, las aguas cristalinas del río Pance y los senderos nublados del Parque Nacional Natural Farallones albergan la emblemática tangara multicolor.</p>
+</div>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" padding="0" hint-size="280px,420px">
+<div style="height:200px"><image-slot id="cali-sabores" shape="rect" placeholder="Foto — gastronomía del Pacífico"></image-slot></div>
+<div style="padding:var(--space-6)">
+<h3 style="margin:0 0 var(--space-3);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--navy-900)">Sabores del Pacífico y los Andes</h3>
+<p style="margin:0;font-size:var(--fs-body-s);color:var(--grey-500);text-wrap:pretty">La cocina caleña mezcla la explosión de sabores del Pacífico —pescado fresco, coco y plátano— con la sazón andina de la mazamorra, el sancocho y el infaltable pandebono. Un recorrido que se disfruta en mercados, fondas y restaurantes de autor.</p>
+</div>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" padding="0" hint-size="280px,420px">
+<div style="height:200px"><image-slot id="cali-lugares" shape="rect" placeholder="Foto — Bulevar del Río"></image-slot></div>
+<div style="padding:var(--space-6)">
+<h3 style="margin:0 0 var(--space-3);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--navy-900)">Lugares que puedes visitar</h3>
+<ul style="margin:0;padding-left:1.1em;font-size:var(--fs-body-s);color:var(--grey-500);display:flex;flex-direction:column;gap:6px">
+<li>Bulevar del Río y La Ermita</li>
+<li>Barrio San Antonio</li>
+<li>Granada</li>
+<li>Parque del Perro y sus alrededores</li>
+<li>Ciudad Jardín</li>
+<li>Calle del Sabor, bares y discotecas</li>
+</ul>
+</div>
+</x-import>
+</div>
+</section>
+
+<section style="background:var(--surface-night)">
+<div style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" tone="night" eyebrow="02 — Guía del viajero" title="Lo que necesitas saber antes de venir" hint-size="100%,160px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-5);margin-top:var(--space-10)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" tone="night" hint-size="260px,260px">
+<h3 style="margin:0 0 var(--space-4);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--white)">Clima y vestimenta</h3>
+<p style="margin:0 0 var(--space-3);font-size:var(--fs-body-s);color:var(--navy-200);text-wrap:pretty">Clima tropical cálido durante el día, entre 26 °C y 31 °C. Hacia las 4:30 p. m. entra la famosa brisa caleña y refresca el ambiente a 22 °C.</p>
+<p style="margin:0;font-size:var(--fs-body-s);color:var(--navy-200)">Trae calzado cómodo: el centro histórico se camina.</p>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" tone="night" hint-size="260px,260px">
+<h3 style="margin:0 0 var(--space-4);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--white)">Llegada y movilidad</h3>
+<p style="margin:0 0 var(--space-3);font-size:var(--fs-body-s);color:var(--navy-200);text-wrap:pretty">El Aeropuerto Internacional Alfonso Bonilla Aragón (CLO) está en Palmira, a 30-40 minutos del norte y el occidente de Cali por autopista directa.</p>
+<ul style="margin:0;padding-left:1.1em;font-size:var(--fs-body-s);color:var(--navy-200);display:flex;flex-direction:column;gap:6px">
+<li>Taxis oficiales en la terminal de llegadas</li>
+<li>Uber, Didi y Cabify operan sin problema</li>
+<li>Vanes expreso hacia la Terminal de Transporte</li>
+</ul>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" tone="night" hint-size="260px,260px">
+<h3 style="margin:0 0 var(--space-4);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--white)">Zonas de hospedaje</h3>
+<p style="margin:0 0 var(--space-3);font-size:var(--fs-body-s);color:var(--navy-200);text-wrap:pretty">Sectores con buena oferta de hoteles boutique y cadenas, cafés y andenes caminables:</p>
+<ul style="margin:0;padding-left:1.1em;font-size:var(--fs-body-s);color:var(--navy-200);display:flex;flex-direction:column;gap:6px">
+<li>Granada y Versalles (norte)</li>
+<li>El Peñón y San Antonio (centro-occidente)</li>
+<li>Ciudad Jardín (sur)</li>
+</ul>
+</x-import>
+</div>
+<div style="margin-top:var(--space-10)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="primary" size="lg" onClick="{{ irAsistente }}" hint-size="220px,50px">Reservar mi cupo</x-import>
+</div>
+</div>
+</section>
+</div>
+</sc-if>
+
+<sc-if value="{{ esAsistente }}" hint-placeholder-val="{{ false }}">
+<div>
+<section style="background:var(--wash-aurora)">
+<div style="max-width:var(--container-max);margin:0 auto;padding:clamp(36px,5vw,72px) var(--gutter)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" eyebrow="Inscripción — Asistente" title="Reserva tu cupo" lead="Entrada gratuita con registro previo. Te enviamos la confirmación al correo." hint-size="100%,200px"></x-import>
+</div>
+</section>
+<section style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--space-10);align-items:start">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" hint-size="100%,700px">
+<form onSubmit="{{ enviarAsistente }}">
+<div style="display:flex;flex-direction:column;gap:var(--space-5)">
+<sc-if value="{{ enviadoAsistente }}" hint-placeholder-val="{{ false }}">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormMessage" tone="success" title="¡Listo! Recibimos tu inscripción" hint-size="100%,90px">Te escribimos al correo con los detalles del día.</x-import>
+</sc-if>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-5)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Nombre" htmlFor="as-nombre" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="as-nombre" required="{{ true }}" placeholder="Ana" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Apellido" htmlFor="as-apellido" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="as-apellido" required="{{ true }}" placeholder="Marín" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Número de identificación" htmlFor="as-id" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="as-id" required="{{ true }}" placeholder="1 234 567 890" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Correo" htmlFor="as-correo" required="{{ true }}" hint="Te enviamos la confirmación aquí." hint-size="100%,86px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="as-correo" type="email" required="{{ true }}" placeholder="ana@correo.com" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Teléfono" htmlFor="as-tel" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="as-tel" type="tel" placeholder="+57 300 000 0000" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Empresa" htmlFor="as-empresa" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="as-empresa" placeholder="Dónde trabajas hoy" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Cargo" htmlFor="as-cargo" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="as-cargo" placeholder="Backend developer" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="LinkedIn" htmlFor="as-linkedin" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="as-linkedin" type="url" placeholder="linkedin.com/in/tu-perfil" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Ciudad" htmlFor="as-ciudad" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="as-ciudad" placeholder="Cali" hint-size="100%,48px"></x-import>
+</x-import>
+</div>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Checkbox" id="as-consent" label="Quiero recibir noticias del evento por correo" hint-size="100%,44px"></x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="primary" size="lg" fullWidth="{{ true }}" hint-size="100%,52px">Inscribirme</x-import>
+</div>
+</form>
+</x-import>
+<div style="position:sticky;top:96px;display:flex;flex-direction:column;gap:var(--space-5);max-width:380px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" tone="soft" accentBar="{{ true }}" hint-size="100%,240px">
+<h3 style="margin:0 0 var(--space-4);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--navy-900)">El día en corto</h3>
+<ul style="margin:0;padding-left:1.1em;font-size:var(--fs-body-s);color:var(--grey-500);display:flex;flex-direction:column;gap:8px">
+<li>21 de noviembre de 2026, 8:00 a 18:00</li>
+<li>Cali, Valle del Cauca</li>
+<li>250+ profesionales tech</li>
+<li>Cloud, DevOps, software moderno e IA</li>
+</ul>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="ghost" onClick="{{ irCharlas }}" hint-size="100%,44px">Ver la agenda</x-import>
+</div>
+</div>
+</section>
+</div>
+</sc-if>
+
+<sc-if value="{{ esPonente }}" hint-placeholder-val="{{ false }}">
+<div>
+<section style="background:var(--wash-aurora)">
+<div style="max-width:var(--container-max);margin:0 auto;padding:clamp(36px,5vw,72px) var(--gutter)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" eyebrow="Inscripción — Ponente" title="Postula tu charla" lead="Cuéntanos qué quieres compartir. La convocatoria está abierta hasta agotar cupos de agenda." hint-size="100%,200px"></x-import>
+</div>
+</section>
+<section style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" hint-size="100%,900px">
+<form onSubmit="{{ enviarPonente }}">
+<div style="display:flex;flex-direction:column;gap:var(--space-8)">
+<sc-if value="{{ enviadoPonente }}" hint-placeholder-val="{{ false }}">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormMessage" tone="success" title="¡Listo! Recibimos tu postulación" hint-size="100%,90px">La revisamos con el comité y te escribimos al correo.</x-import>
+</sc-if>
+<div>
+<h3 style="margin:0 0 var(--space-5);font-family:var(--font-display);font-size:var(--fs-h3);text-transform:uppercase;letter-spacing:var(--ls-display);color:var(--navy-900)">Datos del ponente</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-5)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Nombre" htmlFor="po-nombre" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="po-nombre" required="{{ true }}" placeholder="Ana" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Apellido" htmlFor="po-apellido" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="po-apellido" required="{{ true }}" placeholder="Marín" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Correo" htmlFor="po-correo" required="{{ true }}" hint="Te escribimos aquí." hint-size="100%,86px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="po-correo" type="email" required="{{ true }}" placeholder="ana@correo.com" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Teléfono" htmlFor="po-tel" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="po-tel" type="tel" placeholder="+57 300 000 0000" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Empresa" htmlFor="po-empresa" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="po-empresa" placeholder="Dónde trabajas hoy" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Cargo" htmlFor="po-cargo" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="po-cargo" placeholder="Staff engineer" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="LinkedIn" htmlFor="po-linkedin" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="po-linkedin" type="url" placeholder="linkedin.com/in/tu-perfil" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Foto" htmlFor="po-foto" hint="Pega una URL o sube el archivo." hint-size="100%,86px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="po-foto" type="file" accept="image/*" hint-size="100%,48px"></x-import>
+</x-import>
+</div>
+<div style="margin-top:var(--space-5)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Biografía" htmlFor="po-bio" required="{{ true }}" hint="Tres o cuatro líneas: qué haces y desde dónde." hint-size="100%,170px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Textarea" id="po-bio" rows="{{ 4 }}" required="{{ true }}" placeholder="Trabajo en plataformas desde 2016..." hint-size="100%,110px"></x-import>
+</x-import>
+</div>
+</div>
+<div>
+<h3 style="margin:0 0 var(--space-5);font-family:var(--font-display);font-size:var(--fs-h3);text-transform:uppercase;letter-spacing:var(--ls-display);color:var(--navy-900)">Datos de la charla</h3>
+<div style="display:flex;flex-direction:column;gap:var(--space-5)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Título de la charla" htmlFor="po-titulo" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="po-titulo" required="{{ true }}" placeholder="Kubernetes sin dolor en equipos pequeños" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Descripción" htmlFor="po-desc" required="{{ true }}" hint="Qué se lleva la audiencia el lunes siguiente." hint-size="100%,190px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Textarea" id="po-desc" rows="{{ 5 }}" required="{{ true }}" placeholder="La charla recorre..." hint-size="100%,130px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Categoría" htmlFor="po-cat" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Select" id="po-cat" required="{{ true }}" placeholder="Selecciona una categoría" options="{{ categorias }}" hint-size="100%,48px"></x-import>
+</x-import>
+</div>
+</div>
+<div>
+<h3 style="margin:0 0 var(--space-3);font-family:var(--font-display);font-size:var(--fs-h3);text-transform:uppercase;letter-spacing:var(--ls-display);color:var(--navy-900)">Co-ponente</h3>
+<p style="margin:0 0 var(--space-5);font-size:var(--fs-body-s);color:var(--grey-500)">Opcional. Agrega a quien presenta contigo.</p>
+<div style="display:flex;flex-direction:column;gap:var(--space-6)">
+<sc-for list="{{ coponentes }}" as="co" hint-placeholder-count="0">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-5);padding:var(--space-5);border:1px solid var(--border-subtle);border-radius:var(--radius-md)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Nombre" htmlFor="{{ co.idNombre }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="{{ co.idNombre }}" placeholder="Nombre" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Apellido" htmlFor="{{ co.idApellido }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="{{ co.idApellido }}" placeholder="Apellido" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Correo" htmlFor="{{ co.idCorreo }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="{{ co.idCorreo }}" type="email" placeholder="correo@ejemplo.com" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Empresa" htmlFor="{{ co.idEmpresa }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="{{ co.idEmpresa }}" placeholder="Empresa" hint-size="100%,48px"></x-import>
+</x-import>
+</div>
+</sc-for>
+<div>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="ghost" type="button" onClick="{{ agregarCoponente }}" hint-size="220px,44px">+ Agregar co-ponente</x-import>
+</div>
+</div>
+</div>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="primary" size="lg" fullWidth="{{ true }}" hint-size="100%,52px">Postularme</x-import>
+</div>
+</form>
+</x-import>
+</section>
+</div>
+</sc-if>
+
+<sc-if value="{{ esPatrocinador }}" hint-placeholder-val="{{ false }}">
+<div>
+<section style="background:var(--wash-aurora)">
+<div style="max-width:var(--container-max);margin:0 auto;padding:clamp(36px,5vw,72px) var(--gutter)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.SectionHeading" eyebrow="Inscripción — Patrocinador" title="Conecta tu marca con el ecosistema" lead="250+ profesionales tech del suroccidente colombiano en un solo día. Cuéntanos de tu empresa y te enviamos el brochure con los tiers." hint-size="100%,220px"></x-import>
+</div>
+</section>
+<section style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--space-10);align-items:start">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" hint-size="100%,760px">
+<form onSubmit="{{ enviarPatrocinador }}">
+<div style="display:flex;flex-direction:column;gap:var(--space-6)">
+<sc-if value="{{ enviadoPatrocinador }}" hint-placeholder-val="{{ false }}">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormMessage" tone="success" title="¡Listo! Recibimos tu registro" hint-size="100%,90px">Te escribimos al correo con las opciones de patrocinio.</x-import>
+</sc-if>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-5)">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Nombre de la empresa" htmlFor="pa-empresa" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="pa-empresa" required="{{ true }}" placeholder="Tu empresa S.A.S." hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="NIT" htmlFor="pa-nit" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="pa-nit" required="{{ true }}" placeholder="900 123 456-7" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Nombre del contacto" htmlFor="pa-nombre" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="pa-nombre" required="{{ true }}" placeholder="Ana" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Apellido del contacto" htmlFor="pa-apellido" required="{{ true }}" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="pa-apellido" required="{{ true }}" placeholder="Marín" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Correo" htmlFor="pa-correo" required="{{ true }}" hint="Te enviamos el brochure aquí." hint-size="100%,86px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="pa-correo" type="email" required="{{ true }}" placeholder="ana@empresa.com" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Teléfono" htmlFor="pa-tel" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="pa-tel" type="tel" placeholder="+57 300 000 0000" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Sitio web" htmlFor="pa-web" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="pa-web" type="url" placeholder="empresa.com" hint-size="100%,48px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="LinkedIn" htmlFor="pa-linkedin" hint-size="100%,74px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Input" id="pa-linkedin" type="url" placeholder="linkedin.com/company/tu-empresa" hint-size="100%,48px"></x-import>
+</x-import>
+</div>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Tipo de patrocinio" required="{{ true }}" hint-size="100%,200px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.RadioGroup" name="tier" options="{{ tiers }}" value="{{ tier }}" onChange="{{ cambiarTier }}" columns="{{ 2 }}" hint-size="100%,170px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.FormField" label="Mensaje" htmlFor="pa-msg" hint-size="100%,160px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Textarea" id="pa-msg" rows="{{ 4 }}" placeholder="Qué le interesa a tu empresa del evento." hint-size="100%,110px"></x-import>
+</x-import>
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Button" variant="primary" size="lg" fullWidth="{{ true }}" hint-size="100%,52px">Quiero patrocinar</x-import>
+</div>
+</form>
+</x-import>
+<div style="position:sticky;top:96px;display:flex;flex-direction:column;gap:var(--space-5);max-width:380px">
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Card" tone="soft" accentBar="{{ true }}" hint-size="100%,260px">
+<h3 style="margin:0 0 var(--space-4);font-family:var(--font-display);font-size:var(--fs-h3);color:var(--navy-900)">Qué recibe tu marca</h3>
+<ul style="margin:0;padding-left:1.1em;font-size:var(--fs-body-s);color:var(--grey-500);display:flex;flex-direction:column;gap:8px">
+<li>Presencia ante 250+ profesionales tech</li>
+<li>Logo en el sitio y en la señalética del día</li>
+<li>Espacio de stand según el tier</li>
+<li>Contacto directo con talento del Valle</li>
+</ul>
+</x-import>
+<p style="margin:0;font-family:var(--font-mono);font-size:var(--fs-body-s);color:var(--grey-600)">Dudas: <a href="mailto:techday@gmail.com">techday@gmail.com</a></p>
+</div>
+</div>
+</section>
+</div>
+</sc-if>
+
+<x-import component-from-global-scope="TechDayCaliDesignSystem_23dc8c.Footer" communities="{{ comunidades }}" columns="{{ columnasFooter }}" email="techday@gmail.com" note="Tecnología · Comunidad · Conocimiento" hint-size="100%,420px"></x-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mostrarContador&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contenido&quot;},&quot;conferencistas&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:12,&quot;min&quot;:0,&quot;max&quot;:60,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Cifras del hero&quot;},&quot;participantes&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:250,&quot;min&quot;:0,&quot;max&quot;:2000,&quot;step&quot;:10,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Cifras del hero&quot;},&quot;patrocinadores&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:8,&quot;min&quot;:0,&quot;max&quot;:40,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Cifras del hero&quot;}}">
+class Component extends DCLogic {
+  state = { ruta: "inicio", filtro: "Todos", coponentes: 0, enviados: {} };
+
+  agenda = [
+    { time: "08:00", title: "Registro y café", kind: "break" },
+    { time: "09:00", title: "Apertura: ocho comunidades, un solo día", detail: "Comité organizador", track: "Innovación" },
+    { time: "10:00", title: "El futuro de la inteligencia artificial aplicada", detail: "Por confirmar · Empresa", track: "IA/ML" },
+    { time: "11:00", title: "Construyendo aplicaciones modernas", detail: "Por confirmar · Empresa", track: "Software" },
+    { time: "12:00", title: "IA aplicada al desarrollo de producto", detail: "Por confirmar · Empresa", track: "IA/ML" },
+    { time: "13:00", title: "Almuerzo y networking", kind: "break" },
+    { time: "14:00", title: "Arquitecturas cloud escalables", detail: "Por confirmar · Empresa", track: "Cloud" },
+    { time: "15:00", title: "Kubernetes desde cero, en 60 minutos", detail: "Por confirmar · Empresa", track: "DevOps" },
+    { time: "16:00", title: "Café y pandebono", kind: "break" },
+    { time: "16:30", title: "De notebook a producción: MLOps mínimo viable", detail: "Por confirmar · Empresa", track: "IA/ML" },
+    { time: "17:30", title: "Cierre y foto de comunidad", detail: "Comité organizador", track: "Innovación" }
+  ];
+
+  ir = (ruta) => {
+    this.setState({ ruta });
+    window.scrollTo({ top: 0, behavior: "auto" });
+  };
+
+  seccion = (id) => {
+    const go = () => {
+      const el = document.getElementById(id);
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 88, behavior: "smooth" });
+    };
+    if (this.state.ruta !== "inicio") this.setState({ ruta: "inicio" }, () => setTimeout(go, 60));
+    else go();
+  };
+
+  navegar = (id) => {
+    if (id === "charlas") this.ir("charlas");
+    else if (id === "cali") this.ir("cali");
+    else if (id === "inicio") this.ir("inicio");
+    else this.seccion(id);
+  };
+
+  enviar = (clave) => (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    this.setState(s => ({ enviados: Object.assign({}, s.enviados, { [clave]: true }) }));
+  };
+
+  renderVals() {
+    const r = this.state.ruta;
+    const p = this.props;
+    const filtroActual = this.state.filtro;
+    const pistas = ["Todos", "Cloud", "DevOps", "Software", "IA/ML"];
+
+    return {
+      esInicio: r === "inicio",
+      esCharlas: r === "charlas",
+      esCali: r === "cali",
+      esAsistente: r === "asistente",
+      esPonente: r === "ponente",
+      esPatrocinador: r === "patrocinador",
+      rutaActiva: r === "cali" ? "cali" : r === "charlas" ? "charlas" : "inicio",
+
+      mostrarContador: p.mostrarContador ?? true,
+      cifraConferencistas: String(p.conferencistas ?? 12),
+      cifraParticipantes: (p.participantes ?? 250) + "+",
+      cifraPatrocinadores: String(p.patrocinadores ?? 8),
+
+      navegar: this.navegar,
+      irCharlas: () => this.ir("charlas"),
+      irCali: () => this.ir("cali"),
+      irAsistente: () => this.ir("asistente"),
+      irPonente: () => this.ir("ponente"),
+      irPatrocinador: () => this.ir("patrocinador"),
+
+      navegacion: [
+        { id: "inicio", label: "Inicio" },
+        { id: "evento", label: "Evento" },
+        { id: "charlas", label: "Charlas" },
+        { id: "cali", label: "Cali" },
+        { id: "contacto", label: "Contacto" }
+      ],
+      comunidades: [
+        "AWS UG Valle del Cauca", "Cloud Native Cali", "GDG Cali", "Parchatech",
+        "Pioneras Dev Cali", "Python Cali", "PyLadies Cali", "Rails Girls Cali"
+      ],
+      columnasFooter: [
+        { title: "Evento", links: [{ label: "Acerca" }, { label: "Charlas" }, { label: "Cali" }, { label: "Patrocinadores" }] },
+        { title: "Inscripciones", links: [{ label: "Asistente" }, { label: "Ponente" }, { label: "Patrocinador" }] },
+        { title: "Contacto", links: [{ label: "techday@gmail.com", href: "mailto:techday@gmail.com" }] }
+      ],
+      patrocinadoresDiamante: ["Por confirmar", "Por confirmar"],
+      patrocinadoresOro: ["Por confirmar", "Por confirmar", "Por confirmar", "Por confirmar"],
+
+      filtros: pistas.map(t => ({
+        label: t,
+        variant: filtroActual === t ? "solid" : "ghost",
+        onClick: () => this.setState({ filtro: t })
+      })),
+      agendaFiltrada: this.agenda.filter(f => filtroActual === "Todos" || f.kind === "break" || f.track === filtroActual),
+
+      categorias: ["Cloud", "DevOps", "Desarrollo", "IA", "Arquitectura", "Otros"],
+      tiers: [
+        { value: "Bronze", label: "Bronze", description: "Logo en el sitio y mención en redes." },
+        { value: "Silver", label: "Silver", description: "Logo en señalética y espacio compartido." },
+        { value: "Gold", label: "Gold", description: "Stand propio y mención en apertura." },
+        { value: "Platinum", label: "Platinum", description: "Presencia principal y charla de patrocinador." }
+      ],
+      tier: this.state.tier ?? "Bronze",
+      cambiarTier: (e) => this.setState({ tier: e.target.value }),
+
+      coponentes: Array.from({ length: this.state.coponentes }, (_, i) => ({
+        idNombre: "co-nombre-" + i, idApellido: "co-apellido-" + i,
+        idCorreo: "co-correo-" + i, idEmpresa: "co-empresa-" + i
+      })),
+      agregarCoponente: () => this.setState(s => ({ coponentes: s.coponentes + 1 })),
+
+      enviarContacto: this.enviar("contacto"),
+      enviarAsistente: this.enviar("asistente"),
+      enviarPonente: this.enviar("ponente"),
+      enviarPatrocinador: this.enviar("patrocinador"),
+      enviadoContacto: !!this.state.enviados.contacto,
+      enviadoAsistente: !!this.state.enviados.asistente,
+      enviadoPonente: !!this.state.enviados.ponente,
+      enviadoPatrocinador: !!this.state.enviados.patrocinador
+    };
+  }
+}
+</script>
+</body>
+</html>

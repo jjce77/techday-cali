@@ -1,0 +1,70 @@
+:root{
+/* ── Base palette — sampled from the Tech Day Cali poster and the multicolored
+      tanager (Tangara multicolor), the emblematic bird of Valle del Cauca ── */
+
+/* Navy: the poster headline ink and the dark surface family */
+--navy-950:#071132;--navy-900:#0E2050;--navy-800:#16306E;--navy-700:#1F4291;--navy-600:#2E56AE;--navy-400:#6E8BD1;--navy-200:#BCCBEB;--navy-100:#DDE5F6;
+
+/* Tanager turquoise — the bird's breast; the primary interactive accent */
+--turquoise-700:#0B6F86;--turquoise-600:#0E88A3;--turquoise-500:#14A5C4;--turquoise-400:#3CC0DA;--turquoise-200:#A7E4F0;--turquoise-100:#DDF4F9;
+
+/* Guayacán yellow — the flowering branch in the poster */
+--yellow-600:#D99A00;--yellow-500:#F2B705;--yellow-400:#FFC93C;--yellow-200:#FFE59B;--yellow-100:#FFF6DC;
+
+/* Tanager orange — the bird's face */
+--orange-600:#D96A06;--orange-500:#F28C0F;--orange-200:#FBD4A5;
+
+/* Leaf green — wing and canopy */
+--green-700:#1F7A3D;--green-600:#2F9A4E;--green-500:#5FBE4C;--green-200:#C3E8B6;--green-100:#E9F7E2;
+
+/* Lilac — the guayacán rosado blossoms / iridescent poster wash */
+--lilac-500:#9B7EDC;--lilac-300:#C3B0EC;--lilac-100:#EDE6FB;
+
+/* Neutrals — warm-cool grey, never pure black */
+--white:#FFFFFF;--paper:#F7F9FB;--grey-100:#EDF1F5;--grey-200:#DCE3EA;--grey-300:#C2CCD6;--grey-400:#93A1AE;--grey-500:#68778A;--grey-600:#4A586A;--grey-700:#32404F;--grey-900:#16202B;
+
+/* Signature iridescent wash: the poster background, top-lit and cool */
+--wash-aurora:linear-gradient(160deg,#DFF0EA 0%,#E6EFF7 38%,#EDE9F8 68%,#F6F1FA 100%); /* @kind color */
+--wash-sky:linear-gradient(180deg,#E8F4F8 0%,#F2F6FB 55%,#F7F3FB 100%); /* @kind color */
+--wash-plumage:linear-gradient(100deg,var(--turquoise-500) 0%,var(--green-600) 45%,var(--yellow-500) 100%); /* @kind color */
+--wash-night:linear-gradient(160deg,#0B1A44 0%,#0E2050 45%,#10344F 100%); /* @kind color */
+
+/* ── Semantic aliases — prefer these in components ── */
+--text-strong:var(--navy-900);
+--text-body:var(--grey-700);
+--text-muted:var(--grey-500);
+--text-inverse:var(--white);
+--text-inverse-muted:var(--navy-200);
+--text-link:var(--turquoise-700);
+--text-link-hover:var(--navy-900);
+
+--surface-page:var(--paper);
+--surface-card:var(--white);
+--surface-sunken:var(--grey-100);
+--surface-night:var(--navy-900);
+--surface-night-card:#132A62;
+--surface-accent-soft:var(--turquoise-100);
+--surface-highlight:var(--yellow-100);
+
+--border-subtle:var(--grey-200);
+--border-default:var(--grey-300);
+--border-strong:var(--navy-900);
+--border-night:rgba(255,255,255,.16);
+
+--accent-primary:var(--turquoise-500);
+--accent-primary-hover:var(--turquoise-600);
+--accent-primary-press:var(--turquoise-700);
+--accent-secondary:var(--yellow-500);
+--accent-tertiary:var(--green-600);
+
+--focus-ring:var(--turquoise-500);
+
+--state-success:var(--green-700);
+--state-success-soft:var(--green-100);
+--state-warning:var(--yellow-600);
+--state-warning-soft:var(--yellow-100);
+--state-error:#C0392B;
+--state-error-soft:#FCEBE8;
+--state-info:var(--turquoise-700);
+--state-info-soft:var(--turquoise-100);
+}
