@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "contactos.md",
+                "file": "SPONSORSHIP/Email_Templates_Sponsors.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "contactos"
+              "title": "Email_Templates_Sponsors"
             }
           }
         ],
@@ -203,14 +203,15 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "5e43f2b4d1bb1167",
+  "active": "872a061ad108321d",
   "lastOpenFiles": [
+    "INSIGHTS_Nathalie_Chicaiza_AWS_UG.md",
     "SPONSORSHIP/Email_Templates_Sponsors.md",
+    "contactos.md",
     "CONCEPTO-Y-ALCANCE/02_ONE_PAGER_Tech_Day_Cali.md",
     "CONCEPTO-Y-ALCANCE/01_CONCEPTO_Y_ALCANCE_Tech_Day_Cali.md",
     "sitio-web/concepto.md",
     "Call_for_Speakers.md",
-    "INSIGHTS_Nathalie_Chicaiza_AWS_UG.md",
     "Community_Activations_Plan.md",
     "sitio-web/Creación de sitio web/_ds/tech-day-cali-design-system-23dc8c0a-ef33-4c35-8fde-7f2f6146ab3b/tokens/typography.css",
     "sitio-web/Creación de sitio web/_ds/tech-day-cali-design-system-23dc8c0a-ef33-4c35-8fde-7f2f6146ab3b/tokens/motion.css",
@@ -241,7 +242,6 @@
     "sitio-web/brief_lovable.md",
     "sitio-web/techday_2026_modelo_datos.md",
     "sitio-web/concepto - copia.md",
-    "contactos.md",
     "sitio-web/conceopt.md",
     "SPONSORSHIP/Estrategia_Outreach_Sponsors.md",
     "README_Estructura_Proyecto.md"
